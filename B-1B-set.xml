@@ -7,7 +7,7 @@ B-1B set file.
 ************************************************************************
 -->
 
-<PropertyList>
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
   <sim>
 
     <startup>
@@ -18,13 +18,41 @@ B-1B set file.
     <status>alpha</status>
     <author>Markus Zojer, Paul Jay Schrenker, pinto</author>
     <aero>B-1B-yasim</aero>
+    <minimum-fg-version>2018.1</minimum-fg-version>
     <fuel-fraction>1.0</fuel-fraction>
 
     <description>Rockwell B-1B Lancer</description>
+    <long-description>
+	 The Rockwell B-1B Lancer is a supersonic variable-sweep wing, heavy bomber used by the United States Air Force. It is commonly called the "Bone" (from "B-One"). It is one of three strategic bombers in the USAF fleet as of 2020, the other two being the B-2 Spirit and the B-52 Stratofortress.
+    </long-description>
+    <previews>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>bone.png</path>
+            </preview>
+    </previews>
 
     <number-views type="int" archive="y">6</number-views>
 
     <chase-distance-m type="double" archive="y">-65.0</chase-distance-m>
+    <tags>
+            <tag>bomber</tag>
+            <tag>jet</tag>
+            <tag>retractable-gear</tag>
+            <tag>refuel</tag>
+    </tags>
+	  
+    <aircraft-data>
+          <path>/instrumentation/transponder/inputs/digit[0]</path>
+          <path>/instrumentation/transponder/inputs/digit[1]</path>
+          <path>/instrumentation/transponder/inputs/digit[2]</path>
+          <path>/instrumentation/transponder/inputs/digit[3]</path>
+          <path>/instrumentation/tacan/frequencies/selected-channel[1]</path>
+          <path>/instrumentation/tacan/frequencies/selected-channel[2]</path>
+          <path>/instrumentation/tacan/frequencies/selected-channel[3]</path>
+          <path>/instrumentation/tacan/frequencies/selected-channel[4]</path>
+    <aircraft-data>
 
     <view n="0">
       <internal archive="y">true</internal>
@@ -472,6 +500,14 @@ B-1B set file.
             <offset-z-m>0.7</offset-z-m>
 		</refuel>
   </systems>
+	
+  <!-- MP Damage -->
+
+  <payload>
+	<armament>
+		<msg type="bool">true</msg>
+	</armament>
+  </payload>
 
 
   <autopilot>
