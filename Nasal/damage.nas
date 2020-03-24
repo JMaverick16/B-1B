@@ -426,6 +426,22 @@ var fail_fleet_systems = func (probability, factor) {
         return;
       }
     }
+    for(var i = 0; i < 6; i = i + 1){
+		if(rand() < probability * 2) {
+			if(i < 4){
+				setprop("/controls/engines/engine["~i~"]/on-fire",1);
+				setprop("/controls/engines/engine["~i~"]/cutoff","true");
+				failed += 1;
+			} elsif(i == 5) {
+				setprop("/controls/APU/APUL-fire",1);
+				failed += 1;
+			} elsif(i == 6) {
+				setprop("/controls/APU/APUR-fire",1);
+				failed += 1;
+			}
+		}
+	}
+    return failed;
   }
   hp_f[no] -= factor * probability*(0.75+rand()*0.25);# from 75 to 100% damage
   printf("HP[%d]: %d/%d", no, hp_f[no], hp_max);
