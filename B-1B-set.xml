@@ -52,7 +52,7 @@ B-1B set file.
           <path>/instrumentation/tacan/frequencies/selected-channel[2]</path>
           <path>/instrumentation/tacan/frequencies/selected-channel[3]</path>
           <path>/instrumentation/tacan/frequencies/selected-channel[4]</path>
-    <aircraft-data>
+    </aircraft-data>
 
     <view n="0">
       <internal archive="y">true</internal>
